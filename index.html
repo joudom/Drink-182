@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <header class="row text-center mb-3 bg-dark p-3">
+        <h1 class="text-light">Cocktail Recipes</h1>
+        <div class="row justify-content-center">
+            <input class="col-7" type="text" name="Search" id="searchBar" placeholder="Enter ingredient or cocktail name">
+            <button class="col-1 btn btn-outline-primary mx-1">Submit</button>
+        </div>
+    </header> -->
+
+    <div class="navDIV mx-3">
+        <nav class="nav justify-content-between">
+            <div class="logo">
+                <a href="/front-end-project/index" class="navbar-brand">
+                    <img src="data:image/png;base64,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" height="50" alt="...">
+                </a>
+            </div>
+
+            <div class="navPages d-inline-flex">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Recipes</a>
+                <a href="#" class="nav-item nav-link">About</a>
+                <a href="#" class="nav-item nav-link">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="row text-center mx-5" id="mainContent">
+
+        <h2>Drink-182</h2>
+        <img src="/front-end-project/images/cocktail-banner.jpg">
+
+        <h1>Most Popular Cocktails</h1>
+        <div class="row d-flex-inline wrap mb-3 justify-content-center" id="cocktailResults">
+            <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Spring Rolls"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Crispy Egg Rolls"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Pho Combination"></button>
+                </div>
+                <div class="carousel-inner my-5">
+                  <div class="carousel-item active">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+        <br><br>
+
+        <h1>Cocktails For You</h1>
+        <div class="row d-flex-inline wrap mb-3 justify-content-center" id="cocktailResults">
+            <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Spring Rolls"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Crispy Egg Rolls"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Pho Combination"></button>
+                </div>
+                <div class="carousel-inner my-5">
+                  <div class="carousel-item active">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="" class="offset-2 d-block w-25" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark offset-4">
+                      <h5></h5>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
