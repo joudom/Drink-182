@@ -1,0 +1,25 @@
+.active{
+    background-color: #f7f7f7;
+}
+
+#formSuggest{
+    background-image: url(/images/cocktail.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#formCS{
+    background-image: url(/images/customerService.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#formB{
+    background-image: url(/images/business.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+form{
+    text-shadow: 1px 1px white;
+}
