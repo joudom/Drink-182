@@ -28,10 +28,10 @@ formOne = `
 
     <div>
         <h4>Are You A Robot?</h4>
-        <p>
-            <label for="robot-check">Please Type: Bee Boop I am!</label>
-            <input id="robot-check" type="text" pattern="Bee Boop I am!">
-        </p>
+        
+        <label for="robot-check">Please Type: Bee Boop I am!</label>
+        <input id="robot-check" type="text" pattern="Bee Boop I am!">
+    
     </div>
         
     <button class="btn btn-outline-success">Submit</button>
@@ -72,10 +72,10 @@ formTwo = `
             
                     <div>
                         <h4>Are You A Robot?</h4>
-                        <p>
-                            <label for="robot-check">Please Type: Bee Boop I am!</label>
-                            <input id="robot-check" type="text" pattern="Bee Boop I am!">
-                        </p>
+                
+                        <label for="robot-check">Please Type: Bee Boop I am!</label>
+                        <input id="robot-check" type="text" pattern="Bee Boop I am!">
+                    
                     </div>
                         
                     <button class="btn btn-outline-primary btn-light">Submit</button>
