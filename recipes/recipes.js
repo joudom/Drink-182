@@ -38,7 +38,7 @@ function showDrinkTypes(types) {
     const typesOfDrinks = $('#typeFilters').html(`
         ${types.map(function(choices) {
             return `<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</option>`
+                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</div>`
         }).join('')
     }`)
 }
@@ -47,7 +47,7 @@ function showDrinkCategories(categories) {
     const categoriesOfDrinks = $('#categoryFilters').html(`
         ${categories.map(function(choices) {
             return `<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</option>`
+                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</div>`
         }).join('')
     }`)
 }
@@ -56,7 +56,7 @@ function showDrinkIngredients(ingredients) {
     const ingredientsOfDrinks = $('#ingredientFilters').html(`
         ${ingredients.map(function(choices) {
             return `<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</option>`
+                    <div class="form-check-label" for="flexSwitchCheckDefault">${choices}</div>`
         }).join('')
     }`)
 }
