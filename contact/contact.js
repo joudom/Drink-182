@@ -34,7 +34,7 @@ formOne = `
     
     </div>
         
-    <button class="btn btn-outline-success">Submit</button>
+    <button class="btn btn-outline-success my-1">Submit</button>
 </form>`;
 
 
@@ -78,7 +78,7 @@ formTwo = `
                     
                     </div>
                         
-                    <button class="btn btn-outline-primary btn-light">Submit</button>
+                    <button class="btn btn-outline-primary btn-light my-1">Submit</button>
                 </form>`;
 
 formThree = `
@@ -116,7 +116,7 @@ formThree = `
                             <label class="form-check-label" for="inlineRadio3">Expert</label>
                         </div>
                     </div>
-                    <button class="btn btn-outline-dark btn-light">Suggest</button>
+                    <button class="btn btn-outline-dark btn-light my-1">Suggest</button>
                 </form>`
 
 $('#support').click(function(e){
