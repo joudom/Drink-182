@@ -26,8 +26,8 @@ function listPopular(array){
     const popularDrinks = $('#popularResults').html(`
     ${array.map(function(recipe){
         return `
-        <div class="card me-3 mb-3 text-center" id="${recipe.idDrink}" style="height: fit-content; width: 400px;">
-            <a class="text-decoration-none text-dark" href="#">
+        <div class="card me-3 mb-3 text-center" id="${recipe.idDrink}" onclick="saveID(this.id)" style="height: fit-content; width: 400px;">
+            <a class="text-decoration-none text-dark" href="/results.html">
                 <img class="rounded img-fluid my-1" src="${recipe.strDrinkThumb}" alt="Card image cap">
                 <div class="card-body p-3">
                     <h5 class="card-title">${recipe.strDrink}</h5>
@@ -41,8 +41,8 @@ function listRandom(array){
     const popularDrinks = $('#randomResults').html(`
     ${array.map(function(recipe){
         return `
-        <div class="card me-3 mb-3 text-center" id="${recipe.idDrink}" style="height: fit-content; width: 400px;">
-            <a class="text-decoration-none text-dark" href="#">
+        <div class="card me-3 mb-3 text-center" id="${recipe.idDrink}" onclick="saveID(this.id)" style="height: fit-content; width: 400px;">
+            <a class="text-decoration-none text-dark" href="/results.html">
                 <img class="rounded img-fluid my-1" src="${recipe.strDrinkThumb}" alt="Card image cap">
                 <div class="card-body p-3">
                     <h5 class="card-title">${recipe.strDrink}</h5>
@@ -53,3 +53,9 @@ function listRandom(array){
 }
 getPopular();
 getRandom();
+
+function saveID(id){
+    localStorage.clear('activeRecipe')
+    let IDstr = id;
+    localStorage.setItem('activeRecipe', IDstr);
+}
