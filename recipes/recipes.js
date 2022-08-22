@@ -194,8 +194,8 @@ function displayResults(drinks){
     const popularDrinks = $('#resultCards').html(`
     ${drinks.map(function(recipe){
         return `
-        <div class="card me-3 mb-3 text-center" id="${recipe.idDrink}" style="height: fit-content; width: 250px;">
-            <a class="text-decoration-none text-dark" href="#">
+        <div class="card me-3 mb-3 text-center flip-card-front" id="${recipe.idDrink}" onclick="saveID(this.id)" style="height: fit-content; width: 250px;">
+            <a class="text-decoration-none text-dark" href="/results.html">
                 <img class="rounded img-fluid my-1" src="${recipe.strDrinkThumb}" alt="Card image cap">
                 <div class="card-body p-3">
                     <h5 class="card-title">${recipe.strDrink}</h5>
@@ -205,4 +205,10 @@ function displayResults(drinks){
     }).join('')}`)
 }
 
-let drinksArray = []
+let drinksArray = [];
+
+function saveID(id){
+    localStorage.clear('activeRecipe')
+    let IDstr = id;
+    localStorage.setItem('activeRecipe', IDstr);
+}
