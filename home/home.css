@@ -1,0 +1,14 @@
+
+.scroll::-webkit-scrollbar {
+	height: 8px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	background-color: rgb(17, 16, 16);
+}
+
+.scroll::-webkit-scrollbar-button{
+	/* display: block; */
+	height: 10px;
+}
+
