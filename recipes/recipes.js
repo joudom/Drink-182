@@ -70,8 +70,12 @@ function showDrinkCategories(categories) {
 function showDrinkIngredients(ingredients) {
     const ingredientsOfDrinks = $('#ingredientFilters').html(`
         ${ingredients.map(function(choices) {
-            return `<input class="form-check-input" type="checkbox" onchange="classChangeIngredients(this)" id="${choices}">
-                    <div class="form-check-label" for="${choices}">${choices}</div>`
+            return `<div class="form-switch">
+                        <input class="form-check-input" type="checkbox" onchange="classChangeIngredients(this)" id="${choices}">
+                        <label class="form-check-label" for="${choices}">
+                            ${choices}
+                        </label>
+                    </div>`
         }).join('')
     }`)
 }
