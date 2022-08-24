@@ -1,0 +1,10 @@
+
+#dring-img{
+	width: 90%;
+}
+
+@media (min-width: 992px) {
+	#dring-img{
+		width: 50%;
+	}
+}
