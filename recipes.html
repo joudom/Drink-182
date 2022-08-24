@@ -55,20 +55,20 @@
 
   <div class="receipesPage">
     <h1><center>r e c i p e s</center></h1>
-      <div class="row m-1">
+      <div class="row m-1 overflow-scroll" style="max-height: 46rem;">
 
         <!-- END OF FILTERS SECTION -->
-        <div class="allFilters col-4 border bg-light p-0 overflow-hidden">
+        <div class="allFilters col-sm-3 col-xs-5 border bg-light p-0 overflow-scroll" style="max-height: inherit;">
 
-          <div class="types row-cols-7 border p-1"><h3>Filter by Type</h3>
+          <div class="types border-bottom row-4 p-1"><h3>Filter by Type</h3>
             <div id="typeFilters"></div>
           </div>
 
-          <div class="categories row-cols-7 border p-1"><h3>Filter by Category</h3>
+          <div class="categories border-bottom row-4 p-1"><h3>Filter by Category</h3>
             <div id="categoryFilters"></div>
           </div>
 
-          <div class="ingredients row-cols-7 border p-1"><h3>Filter by Ingredients</h3>
+          <div class="ingredients border-bottom row-4 p-1"><h3>Filter by Ingredients</h3>
             <div class="column form-check form-switch overflow-scroll" style="height: 15rem;" id="ingredientFilters"></div>
           </div>
 
@@ -76,7 +76,7 @@
         <!-- END OF FILTERS SECTION -->
 
             <!-- START OF CARDS SECTION -->
-            <div class="p-3 col-8 border d-inline-flex flex-wrap justify-content-center" id="resultCards">
+            <div class="p-3 col-sm-9 col-xs-7 border d-inline-flex flex-wrap justify-content-center overflow-scroll" style="max-height: inherit;" id="resultCards">
                 
             </div>
             <!-- END OF CARDS SECTION -->
