@@ -1,5 +1,10 @@
 window.onload = (e) => {
     const synth = window.speechSynthesis;
+    // cancel the speech when page closed
+    window.addEventListener("beforeunload", function() {
+        synth.cancel(); 
+    })
+    
     loadRecipe(synth);
 }
 
