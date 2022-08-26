@@ -26,8 +26,8 @@ function displayMeal(dish, synth){
     for(let i = 0 ; i<15 ; i++){
         let strMealName = "strIngredient" + (i+1);
         let strMealMsr = "strMeasure" + (i+1);
-        if(dish[strMealName] == null) break; //if there are no ingredients left on the meal object, exit the loop
-        if(dish[strMealMsr] == null) { //if there is no scale, don't create an element for it
+        if(dish[strMealName] == null || dish[strMealName] == "") break;  //if there are no ingredients left on the meal object, exit the loop
+        if(dish[strMealMsr] == "") { //if there is no scale, don't create an element for it
             ingredients += `<div class="d-flex justify-content-between pe-4 my-1" style="align-items: center">
             <li>${dish[strMealName]}</li>`
         }else{
