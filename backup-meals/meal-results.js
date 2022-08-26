@@ -32,4 +32,25 @@ function displayMeal(dish){
 
     $("#meal-ingredients-list").html(ingredients);
     $("#meal-instructions").html(dish["strInstructions"])
+
+    addTextToSpeech(dish["strInstructions"], synth);;
+}
+
+function addTextToSpeech(drinkIns, synth){
+    $("#text-to-speech").click(function() {
+        // when text-to-speech button clicked consecutevly, reset the speechObj to start reading again
+        synth.cancel(); 
+
+        const voices = synth.getVoices();
+        let voice = null;
+        for(voice of voices){
+            if(voice["voiceURI"] == "Google UK English Male") break;
+        }
+
+        const speechObj = new SpeechSynthesisUtterance(drinkIns);
+        speechObj.voice = voice;
+        speechObj.pitch = 0;
+        speechObj.rate = 1;
+        synth.speak(speechObj);
+    })
 }
