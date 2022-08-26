@@ -1,23 +1,29 @@
 window.onload = (e) => {
-    loadMeal();
+    const synth = window.speechSynthesis;
+    // cancel the speech when page closed
+    window.addEventListener("beforeunload", function() {
+        synth.cancel(); 
+    })
+    
+    loadMeal(synth);
 }
 
 
-async function loadMeal (){
+async function loadMeal (synth){
     let test2 = localStorage.getItem('activeMeal')
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${test2}`);
     const data = await response.json();
     const meal = data.meals;
-    displayMeal(meal[0]);
+    displayMeal(meal[0], synth);
     document.title = "Drink-182 / " + meal[0].strMeal;
 }
 
-function displayMeal(dish){
+function displayMeal(dish, synth){
     $("#meal-name").html(`<p>${dish.strMeal}</p>`)
     $("#meal-img").attr("src",dish["strMealThumb"])
 
     let ingredients = "";
-    for(let i = 0 ; i<20 ; i++){
+    for(let i = 0 ; i<15 ; i++){
         let strMealName = "strIngredient" + (i+1);
         let strMealMsr = "strMeasure" + (i+1);
         if(dish[strMealName] == null) break; //if there are no ingredients left on the meal object, exit the loop
@@ -36,7 +42,7 @@ function displayMeal(dish){
     addTextToSpeech(dish["strInstructions"], synth);;
 }
 
-function addTextToSpeech(drinkIns, synth){
+function addTextToSpeech(mealIns, synth){
     $("#text-to-speech").click(function() {
         // when text-to-speech button clicked consecutevly, reset the speechObj to start reading again
         synth.cancel(); 
@@ -47,7 +53,7 @@ function addTextToSpeech(drinkIns, synth){
             if(voice["voiceURI"] == "Google UK English Male") break;
         }
 
-        const speechObj = new SpeechSynthesisUtterance(drinkIns);
+        const speechObj = new SpeechSynthesisUtterance(mealIns);
         speechObj.voice = voice;
         speechObj.pitch = 0;
         speechObj.rate = 1;
