@@ -44,13 +44,18 @@ function displayRecipe(drink, synth){
 
 function addTextToSpeech(drinkIns, synth){
     $("#text-to-speech").click(function() {
-        const voices = synth.getVoices();
-        const voice = voices[0] // Microsoft David - English (United States)
-        const speechObj = new SpeechSynthesisUtterance(drinkIns);
-        synth.cancel(); // when text-to-speech button clicked consecutevly, reset the speechObj to start reading from start
+        // when text-to-speech button clicked consecutevly, reset the speechObj to start reading again
+        synth.cancel(); 
 
+        const voices = synth.getVoices();
+        let voice = null;
+        for(voice of voices){
+            if(voice["voiceURI"] == "Google UK English Male") break;
+        }
+
+        const speechObj = new SpeechSynthesisUtterance(drinkIns);
         speechObj.voice = voice;
-        speechObj.pitch = 4;
+        speechObj.pitch = 0;
         speechObj.rate = 1;
         synth.speak(speechObj);
     })
