@@ -1,10 +1,10 @@
 
 #meal-img{
-	width: 90%;
+	height: 75%;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 100px) {
 	#meal-img{
-		width: 50%;
+		width: 75%;
 	}
 }
