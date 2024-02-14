@@ -119,52 +119,52 @@ formThree = `
                     <button class="btn btn-outline-dark btn-light my-1">Suggest</button>
                 </form>`
 
-$('#support').click(function(e){
-    changeForm(formOne);
-    $('#support').addClass('active');
-    $('#formCS').on('submit',(function(e){
-        e.preventDefault();
-        thanks();
-    }))   
+$('#support').click(function (e) {
+	changeForm(formOne);
+	$('#support').addClass('active');
+	$('#formCS').on('submit', (function (e) {
+		e.preventDefault();
+		thanks();
+	}))
 });
-$('#business').click(function(e){
-    changeForm(formTwo);
-    $('#business').addClass('active');
-    $('#formB').on('submit',(function(e){
-        e.preventDefault();
-        thanks();
-    }))
+$('#business').click(function (e) {
+	changeForm(formTwo);
+	$('#business').addClass('active');
+	$('#formB').on('submit', (function (e) {
+		e.preventDefault();
+		thanks();
+	}))
 });
-$('#suggestions').click(function(e){
-    changeForm(formThree);
-    $('#suggestions').addClass('active');
-    $('#formSuggest').on('submit',(function(e){
-        e.preventDefault();
-        thanks();
-    }))
+$('#suggestions').click(function (e) {
+	changeForm(formThree);
+	$('#suggestions').addClass('active');
+	$('#formSuggest').on('submit', (function (e) {
+		e.preventDefault();
+		thanks();
+	}))
 });
 
 
-function changeForm (form){
-    $('#formArea').empty();
-    $('#formArea').html(form);
-    $('#business').removeClass('active');
-    $('#support').removeClass('active');
-    $('#suggestions').removeClass('active');  
+function changeForm(form) {
+	$('#formArea').empty();
+	$('#formArea').html(form);
+	$('#business').removeClass('active');
+	$('#support').removeClass('active');
+	$('#suggestions').removeClass('active');
 }
 
-function thanks(){
-    let thankyou = `
+function thanks() {
+	let thankyou = `
     <h2 style="font-family:lucida console;">Thank You For Your Submission</h2>
         <p>Our team will review this request and get back you within the next 24-48 business hours.</p>`
-    $('#formArea').empty();
-    $('#formArea').html(thankyou);
-    $('#business').removeClass('active');
-    $('#support').removeClass('active');
-    $('#suggestions').removeClass('active');
+	$('#formArea').empty();
+	$('#formArea').html(thankyou);
+	$('#business').removeClass('active');
+	$('#support').removeClass('active');
+	$('#suggestions').removeClass('active');
 }
 
-$('#formCS').on('submit',(function(e){
-    e.preventDefault();
-    thanks();
+$('#formCS').on('submit', (function (e) {
+	e.preventDefault();
+	thanks();
 }))
